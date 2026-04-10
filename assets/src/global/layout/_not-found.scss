@@ -1,0 +1,17 @@
+@use "../base/variables" as *;
+
+.not-found {
+	padding: 80px 0;
+	text-align: center;
+
+	&__title {
+		font-size: 48px;
+		margin-bottom: 16px;
+	}
+
+	&__text {
+		font-size: 16px;
+		color: $color-secondary;
+		margin-bottom: 24px;
+	}
+}

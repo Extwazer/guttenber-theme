@@ -1,0 +1,14 @@
+{
+  "name": "theme/container",
+  "title": "Container",
+  "category": "layout",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": ["wide", "full"]
+  },
+  "style": "file:../../assets/dist/blocks/container/container.css",
+  "script": "file:../../assets/dist/blocks/container/script.js"
+}

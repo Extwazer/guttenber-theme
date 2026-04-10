@@ -1,0 +1,40 @@
+@use "../base/variables" as *;
+
+
+.footer {
+	margin-top: auto;
+
+	background: $color-light;
+	padding: 40px 0;
+	border-top: 1px solid #eee;
+
+	&__inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+		flex-wrap: wrap;
+	}
+
+	&__logo img {
+		max-height: 40px;
+	}
+
+	&__nav {
+		.footer-menu {
+			display: flex;
+			gap: 20px;
+			flex-wrap: wrap;
+
+			a {
+				font-size: 14px;
+				color: $color-dark;
+				transition: 0.2s;
+
+				&:hover {
+					color: $color-primary;
+				}
+			}
+		}
+	}
+}

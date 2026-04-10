@@ -1,0 +1,184 @@
+@use "sass:map";
+@use "sass:math";
+
+// ============================================
+// CONFIG
+// ============================================
+
+$grid-columns: 12;
+$gutter: 24px;
+
+$container-widths: (
+		sm: 540px,
+		md: 720px,
+		lg: 960px,
+		xl: 1140px,
+		xxl: 1320px
+);
+
+$breakpoints: (
+		sm: 576px,
+		md: 768px,
+		lg: 992px,
+		xl: 1200px,
+		xxl: 1400px
+);
+
+// ============================================
+// MIXINS
+// ============================================
+
+@function col-percent($cols) {
+	@return math.div($cols, $grid-columns) * 100%;
+}
+
+@mixin media-up($breakpoint) {
+	@media (min-width: map.get($breakpoints, $breakpoint)) {
+		@content;
+	}
+}
+
+// ============================================
+// CONTAINERS
+// ============================================
+
+.container {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: math.div($gutter, 2);
+	padding-right: math.div($gutter, 2);
+
+	@each $breakpoint, $max-width in $container-widths {
+		@include media-up($breakpoint) {
+			max-width: $max-width;
+		}
+	}
+}
+
+.container-fluid {
+	width: 100%;
+	padding-left: math.div($gutter, 2);
+	padding-right: math.div($gutter, 2);
+}
+
+// ============================================
+// ROW
+// ============================================
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -#{math.div($gutter, 2)};
+	margin-right: -#{math.div($gutter, 2)};
+}
+
+// ============================================
+// COLUMNS BASE
+// ============================================
+
+[class*="col"] {
+	padding-left: math.div($gutter, 2);
+	padding-right: math.div($gutter, 2);
+	flex: 0 0 auto;
+	width: 100%;
+}
+
+// ============================================
+// AUTO COLUMN
+// ============================================
+
+.col {
+	flex: 1 0 0%;
+}
+
+// ============================================
+// GRID GENERATOR
+// ============================================
+
+@for $i from 1 through $grid-columns {
+	.col-#{$i} {
+		flex: 0 0 col-percent($i);
+		max-width: col-percent($i);
+	}
+}
+
+// ============================================
+// RESPONSIVE GRID
+// ============================================
+
+@each $breakpoint, $size in $breakpoints {
+
+	@include media-up($breakpoint) {
+
+		.col-#{$breakpoint} {
+			flex: 1 0 0%;
+		}
+
+		@for $i from 1 through $grid-columns {
+			.col-#{$breakpoint}-#{$i} {
+				flex: 0 0 col-percent($i);
+				max-width: col-percent($i);
+			}
+		}
+
+	}
+
+}
+
+// ============================================
+// OFFSETS
+// ============================================
+
+@for $i from 1 through $grid-columns {
+	.offset-#{$i} {
+		margin-left: col-percent($i);
+	}
+}
+
+@each $breakpoint, $size in $breakpoints {
+
+	@include media-up($breakpoint) {
+
+		@for $i from 1 through $grid-columns {
+			.offset-#{$breakpoint}-#{$i} {
+				margin-left: col-percent($i);
+			}
+		}
+
+	}
+
+}
+
+// ============================================
+// GUTTER UTILITIES
+// ============================================
+
+.g-0 {
+	--gutter-x: 0;
+}
+
+.g-1 {
+	--gutter-x: 8px;
+}
+
+.g-2 {
+	--gutter-x: 16px;
+}
+
+.g-3 {
+	--gutter-x: 24px;
+}
+
+// ============================================
+// FLEX UTILITIES
+// ============================================
+
+.justify-content-start { justify-content: flex-start; }
+.justify-content-center { justify-content: center; }
+.justify-content-end { justify-content: flex-end; }
+.justify-content-between { justify-content: space-between; }
+
+.align-items-start { align-items: flex-start; }
+.align-items-center { align-items: center; }
+.align-items-end { align-items: flex-end; }

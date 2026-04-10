@@ -1,0 +1,98 @@
+@use "../base/variables" as *;
+
+.header {
+	position: relative;
+	background: #fff;
+	border-bottom: 1px solid #eee;
+
+	&__inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 70px;
+	}
+
+	&__logo img {
+		max-height: 40px;
+	}
+
+	&__nav {
+		.menu {
+			display: flex;
+			gap: 24px;
+
+			li {
+				position: relative;
+			}
+
+			a {
+				font-size: 14px;
+				color: #222;
+				transition: 0.2s;
+
+				&:hover {
+					color: $color-primary;
+				}
+			}
+
+			.sub-menu {
+				position: absolute;
+				top: 100%;
+				left: 0;
+				background: #fff;
+				padding: 10px 0;
+				display: none;
+				min-width: 180px;
+				box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+
+				li {
+					padding: 5px 15px;
+				}
+			}
+
+			.has-dropdown:hover .sub-menu {
+				display: block;
+			}
+		}
+	}
+
+	// BURGER
+	&__burger {
+		display: none;
+		flex-direction: column;
+		gap: 4px;
+		background: none;
+		cursor: pointer;
+
+		span {
+			width: 20px;
+			height: 2px;
+			background: #000;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+
+	.header__burger {
+		display: flex;
+	}
+
+	.header__nav {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		background: #fff;
+		display: none;
+
+		.menu {
+			flex-direction: column;
+			padding: 20px;
+		}
+	}
+
+	.header.active .header__nav {
+		display: block;
+	}
+}

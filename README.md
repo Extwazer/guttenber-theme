@@ -6,7 +6,6 @@ A modular WordPress theme built on custom Gutenberg blocks (ACF PRO + `block.jso
 
 - WordPress 6.x
 - PHP 7.4+
-- **ACF PRO** — required. Theme blocks are registered via `"acf"` in `block.json` and rendered through ACF (`render.php`). Without ACF PRO the blocks won't output any content on the front end.
 - Node.js 18+ / npm — build tooling only, not needed in production.
 
 ## Setup

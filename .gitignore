@@ -1,5 +1,14 @@
 .DS_Store
+Thumbs.db
 /.idea
 .idea
+.vscode/
 node_modules/
 assets/dist/
+vendor/
+npm-debug.log*
+yarn-error.log*
+*.log
+.phpcs-cache
+phpcs.cache
+*.orig

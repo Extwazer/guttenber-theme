@@ -2,6 +2,10 @@
 
 .main-content{
 	padding: 50px 0;
+
+	& > .hero-block{
+		margin-top: -50px;
+	}
 }
 
 .archive-header {
@@ -91,7 +95,6 @@
 }
 
 @media (max-width: 768px) {
-
 	.archive-layout {
 		flex-direction: column;
 	}

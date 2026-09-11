@@ -1,5 +1,15 @@
-.hero{
-	width: 500px;
-	height: 500px;
-	background: blue;
+@use "../../assets/src/global/base/variables" as *;
+
+.container-block-1024.container {
+	max-width: 1024px;
+}
+
+.container-block-1440.container {
+	max-width: 1440px;
+}
+
+.container-block-full.container {
+	max-width: none;
+	padding-left: 0;
+	padding-right: 0;
 }

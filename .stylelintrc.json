@@ -1,0 +1,16 @@
+{
+	"extends": "stylelint-config-standard-scss",
+	"rules": {
+		"selector-class-pattern": null,
+		"custom-property-pattern": null,
+		"scss/at-use-no-unnamespaced": null,
+		"alpha-value-notation": "number",
+		"color-function-notation": "legacy",
+		"media-feature-range-notation": "prefix",
+		"property-no-vendor-prefix": null,
+		"value-keyword-case": [
+			"lower",
+			{ "ignoreProperties": ["/^font/"] }
+		]
+	}
+}

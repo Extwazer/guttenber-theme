@@ -21,20 +21,21 @@ input, textarea {
 
 /* Input Styling */
 $custom-input-height: 40px;
-[type=color],
-[type=date],
-[type=datetime-local],
-[type=datetime],
-[type=email],
-[type=month],
-[type=number],
-[type=password],
-[type=search],
-[type=tel],
-[type=text],
-[type=time],
-[type=url],
-[type=week],
+
+[type="color"],
+[type="date"],
+[type="datetime-local"],
+[type="datetime"],
+[type="email"],
+[type="month"],
+[type="number"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="time"],
+[type="url"],
+[type="week"],
 textarea,
 select,
 .ui-selectmenu-button {
@@ -51,23 +52,23 @@ select,
 
 
 textarea[rows] {
-	/*Styles for TextArea*/
+	/* Styles for TextArea */
 	height: 150px;
 	max-width: 100%;
 }
 
-[type=number] {
+[type="number"] {
 	-moz-appearance: textfield;
 }
 
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
 	margin: 0;
 	-webkit-appearance: none;
 }
 
-[type=checkbox],
-[type=file],
-[type=radio] {
+[type="checkbox"],
+[type="file"],
+[type="radio"] {
 	margin-bottom: 0;
 }

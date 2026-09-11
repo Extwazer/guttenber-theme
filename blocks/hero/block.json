@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "theme/hero",
+	"title": "Hero",
+	"category": "layout",
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php",
+		"hideFieldsInSidebar": true
+	},
+	"supports": {
+		"align": [ "full" ]
+	},
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "full"
+		}
+	},
+	"style": [
+		"file:../../assets/dist/blocks/hero/style.css",
+		"file:../../assets/dist/blocks/hero/script.css"
+	],
+	"viewScript": "file:../../assets/dist/blocks/hero/script.js"
+}

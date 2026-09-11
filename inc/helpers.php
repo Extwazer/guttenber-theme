@@ -178,10 +178,10 @@ function acf_link($acf_link, $class = '', $atts = array()){
     $attr_str = '';
     if($atts){
         foreach ($atts as $k => $v){
-            $attr_str .= $k.'="'.$v.'"';
+            $attr_str .= esc_attr($k).'="'.esc_attr($v).'" ';
         }
     }
     ?>
-    <a href="<?php echo $acf_link['url']; ?>" <?php echo $attr_str; ?> <?php echo $class ? 'class="' . $class . '"' : ''; ?> <?php echo $acf_link['target'] ? 'target="' . $acf_link['target'] . '"' : ''; ?>><?php echo $acf_link['title']; ?></a>
+    <a href="<?php echo esc_url($acf_link['url']); ?>" <?php echo $attr_str; ?> <?php echo $class ? 'class="' . esc_attr($class) . '"' : ''; ?> <?php echo !empty($acf_link['target']) ? 'target="' . esc_attr($acf_link['target']) . '"' : ''; ?>><?php echo esc_html($acf_link['title']); ?></a>
     <?php
 }

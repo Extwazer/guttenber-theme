@@ -1,7 +1,3 @@
-// ===== Vendors =====
-// import gsap from "gsap";
-// import Swiper from "swiper";
-
 document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.header');
     const burger = document.querySelector('.header__burger');

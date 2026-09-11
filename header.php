@@ -16,6 +16,8 @@
 	<meta name="format-detection" content="telephone=no,email=no,url=no">
 
 	<!-- Add external fonts below (GoogleFonts / Typekit) -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
 
 	<?php wp_head(); ?>

@@ -1,10 +1,17 @@
 <?php
 
+add_action( 'after_setup_theme', function () {
+	load_theme_textdomain( 'theme', get_template_directory() . '/languages' );
+} );
 
 // Theme supports
 add_theme_support( 'title-tag' );
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'automatic-feed-links' );
+add_theme_support( 'align-wide' );
+add_theme_support( 'responsive-embeds' );
+add_theme_support( 'editor-styles' );
+add_editor_style( 'assets/dist/global/main.css' );
 
 add_theme_support( 'html5', [
 	'comment-list',

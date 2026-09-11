@@ -1,4 +1,6 @@
 {
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
   "name": "theme/container",
   "title": "Container",
   "category": "layout",
@@ -9,6 +11,5 @@
   "supports": {
     "align": ["wide", "full"]
   },
-  "style": "file:../../assets/dist/blocks/container/container.css",
-  "script": "file:../../assets/dist/blocks/container/script.js"
+  "style": "file:../../assets/dist/blocks/container/style.css"
 }

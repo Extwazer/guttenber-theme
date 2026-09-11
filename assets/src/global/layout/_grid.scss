@@ -7,7 +7,6 @@
 
 $grid-columns: 12;
 $gutter: 24px;
-
 $container-widths: (
 		sm: 540px,
 		md: 720px,
@@ -15,7 +14,6 @@ $container-widths: (
 		xl: 1140px,
 		xxl: 1320px
 );
-
 $breakpoints: (
 		sm: 576px,
 		md: 768px,
@@ -108,7 +106,6 @@ $breakpoints: (
 // ============================================
 
 @each $breakpoint, $size in $breakpoints {
-
 	@include media-up($breakpoint) {
 
 		.col-#{$breakpoint} {
@@ -137,9 +134,7 @@ $breakpoints: (
 }
 
 @each $breakpoint, $size in $breakpoints {
-
 	@include media-up($breakpoint) {
-
 		@for $i from 1 through $grid-columns {
 			.offset-#{$breakpoint}-#{$i} {
 				margin-left: col-percent($i);

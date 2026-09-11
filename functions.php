@@ -13,10 +13,9 @@ $includes = [
 	'inc/setup.php',
 	'inc/assets.php',
 	'inc/blocks.php',
+	'inc/editor.php',
 	'inc/widgets.php',
 	'inc/cleanup.php',
-	'inc/admin.php',
-	'inc/media.php',
 	'inc/woocommerce.php',
 	'inc/acf-placeholder.php',
 ];
@@ -28,9 +27,3 @@ foreach ($includes as $file) {
 		require_once $path;
 	}
 }
-
-// ==============================
-// CONSTANTS
-// ==============================
-
-define('IMAGE_PLACEHOLDER', get_stylesheet_directory_uri() . '/app/css/images/placeholder.jpg');

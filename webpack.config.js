@@ -50,6 +50,7 @@ class BuildLoggerPlugin {
             const assets = stats.toJson({ assets: true }).assets || [];
 
             const global = [];
+            const editor = [];
             const blocks = {};
 
             assets.forEach(asset => {
@@ -57,6 +58,10 @@ class BuildLoggerPlugin {
 
                 if (name.startsWith('global/')) {
                     global.push(name.replace('global/', ''));
+                }
+
+                if (name.startsWith('editor/')) {
+                    editor.push(name.replace('editor/', ''));
                 }
 
                 if (name.startsWith('blocks/')) {
@@ -76,12 +81,19 @@ class BuildLoggerPlugin {
             const green = (t) => `\x1b[32m${t}\x1b[0m`;
             const blue = (t) => `\x1b[34m${t}\x1b[0m`;
             const magenta = (t) => `\x1b[35m${t}\x1b[0m`;
+            const cyan = (t) => `\x1b[36m${t}\x1b[0m`;
 
             console.log('\n' + green(`✅ Build completed in ${time}s\n`));
 
             if (global.length) {
                 console.log(blue('📦 Global:'));
                 global.forEach(f => console.log('  - ' + f));
+                console.log('');
+            }
+
+            if (editor.length) {
+                console.log(cyan('🛠️  Editor:'));
+                editor.forEach(f => console.log('  - ' + f));
                 console.log('');
             }
 
@@ -113,7 +125,18 @@ module.exports = (env, argv) => {
         entry: {
             'global/main': './assets/src/global/main.js',
             'global/main-style': './assets/src/global/main.scss',
+            'editor/index': './assets/src/editor/index.js',
             ...getBlockEntries()
+        },
+
+        externals: {
+            '@wordpress/blocks': 'wp.blocks',
+            '@wordpress/block-editor': 'wp.blockEditor',
+            '@wordpress/components': 'wp.components',
+            '@wordpress/compose': 'wp.compose',
+            '@wordpress/element': 'wp.element',
+            '@wordpress/hooks': 'wp.hooks',
+            '@wordpress/i18n': 'wp.i18n'
         },
 
         output: {

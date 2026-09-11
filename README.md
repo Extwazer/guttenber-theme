@@ -110,8 +110,3 @@ The color palette, typography scale (`fontSizes`) and layout widths (`contentSiz
   ```
 
   If Composer/PHP aren't available locally (e.g. in an isolated environment like Local), run these from your local server's Site Shell instead.
-
-## Known limitations
-
-- Blocks fully depend on **ACF PRO** — without it, `render.php` is never invoked and block content won't render on the front end.
-- Google Fonts are loaded directly from Google's CDN (see `header.php`) — worth revisiting if the site needs to be GDPR-compliant.

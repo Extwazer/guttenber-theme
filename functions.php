@@ -8,6 +8,7 @@
 // ==============================
 
 $includes = [
+	'inc/acf-bundled.php',
 	'inc/helpers.php',
 	'inc/menu-walker.php',
 	'inc/setup.php',

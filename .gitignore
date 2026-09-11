@@ -5,7 +5,7 @@ Thumbs.db
 .vscode/
 node_modules/
 assets/dist/
-vendor/
+/vendor/
 npm-debug.log*
 yarn-error.log*
 *.log
